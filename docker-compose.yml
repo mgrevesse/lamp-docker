@@ -1,0 +1,36 @@
+site:
+  build: apache2
+  ports :
+   - "80:80"
+   - "443:443"
+  volumes:
+   - ~/docker/lamp/var/www:/var/www/html/
+   - ~/docker/lamp/var/www/Lab:/var/www/html/Lab/
+   - ~/docker/lamp/php/php.ini:/usr/local/etc/php/conf.d/90-custom-php.ini
+   - ~/docker/lamp/apache2/sites:/etc/apache2/sites-enabled
+  links:
+   - database
+phpmyadmin:
+   image: corbinu/docker-phpmyadmin
+   ports :
+    - "8080:80"
+   environment:
+    - MYSQL_USERNAME=root
+    - MYSQL_PASSWORD=password
+   links:
+    - database:mysql
+database:
+  image: mariadb
+  volumes:
+    - ~/docker/lamp/mysql:/var/lib/mysql/
+  ports:
+    - "3306:3306"  
+  environment:
+    - MYSQL_ROOT_PASSWORD=password
+    - MYSQL_DATABASE=honvillej25
+    - MYSQL_USER=root
+    - MYSQL_PASSWORD=password
+maildev:
+  image: djfarrelly/maildev
+  ports:
+    - "1080:25"

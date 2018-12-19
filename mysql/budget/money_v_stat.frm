@@ -1,0 +1,16 @@
+TYPE=VIEW
+query=select sum(`money_v_mouvement`.`depenserecette`) AS `montant`,`money_v_mouvement`.`categorie` AS `categorie`,`money_v_mouvement`.`annee` AS `annee`,`money_v_mouvement`.`mois` AS `mois` from `budget`.`money_v_mouvement` group by `money_v_mouvement`.`categorie`,`money_v_mouvement`.`annee`,`money_v_mouvement`.`mois` order by `money_v_mouvement`.`annee` desc
+md5=3276f5c82e141761b035d530c70e8747
+updatable=0
+algorithm=0
+definer_user=root
+definer_host=localhost
+suid=1
+with_check_option=0
+timestamp=2018-12-17 15:45:03
+create-version=2
+source=select sum(`money_v_mouvement`.`depenserecette`) AS `montant`,`money_v_mouvement`.`categorie` AS `categorie`,`money_v_mouvement`.`annee` AS `annee`,`money_v_mouvement`.`mois` AS `mois` from `money_v_mouvement` group by `money_v_mouvement`.`categorie`,`money_v_mouvement`.`annee`,`money_v_mouvement`.`mois` order by `money_v_mouvement`.`annee` desc
+client_cs_name=utf8mb4
+connection_cl_name=utf8mb4_general_ci
+view_body_utf8=select sum(`money_v_mouvement`.`depenserecette`) AS `montant`,`money_v_mouvement`.`categorie` AS `categorie`,`money_v_mouvement`.`annee` AS `annee`,`money_v_mouvement`.`mois` AS `mois` from `budget`.`money_v_mouvement` group by `money_v_mouvement`.`categorie`,`money_v_mouvement`.`annee`,`money_v_mouvement`.`mois` order by `money_v_mouvement`.`annee` desc
+mariadb-version=100311

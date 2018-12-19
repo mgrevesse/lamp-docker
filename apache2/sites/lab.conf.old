@@ -1,0 +1,6 @@
+<VirtualHost *:80>
+  ServerName lab
+
+  DocumentRoot ~/docker/lamp/var/html
+
+</VirtualHost>
